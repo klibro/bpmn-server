@@ -36,6 +36,9 @@ class Engine extends ServerComponent implements IEngine{
 		if (userKey) {
 			execution.currentUser = this.iam.getCurrentUser(userKey);
 		}
+		if (options && options.parentItemId) {
+			execution.instance.parentItemId = options.parentItemId;
+		}
 
 		// new dataStore for every execution to be monitored 
 		/* const newDataStore =new DataStore(this.server);

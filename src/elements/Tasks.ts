@@ -211,7 +211,7 @@ class CallActivity extends Node {
         const modelName = this.calledElement;
         //const data = await item.node.getOutput(item);
 
-        const response = await context.engine.start(modelName, item.input);
+        const response = await context.engine.start(modelName, item.input, null, null, {parentItemId: item.id});
 
         token.log('..end of executing a call activity for item:' + item.id + " calling " + this.calledElement);
 
